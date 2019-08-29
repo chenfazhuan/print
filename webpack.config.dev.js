@@ -14,7 +14,7 @@ let webpackConfig = {
   output: {
     path: path.join(__dirname, './dist/'),
     filename: 'static/js/[name].js?id=[hash:7]',
-    publicPath: '/',
+    publicPath: 'https://image.guahao.cn/home-doctor-work/assets/dist/',
   },
   module: {
     rules: [
@@ -85,7 +85,7 @@ let webpackConfig = {
     inline: true,
     hot: true,
     host: 'localhost',
-    port: 8088,
+    port: 9088,
     watchContentBase: true,
     proxy: {
       '/api': 'https://www.easy-mock.com/mock/5b7e1da647bd8a6c422b9bd4',

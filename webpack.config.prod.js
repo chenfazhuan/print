@@ -43,7 +43,7 @@ let webpackConfig = {
   output: {
     path: path.join(__dirname, './dist/'),
     filename: 'static/js/[name].js?id=[hash:7]',
-    publicPath: '/static/zyphysique',
+    publicPath: 'http://172.27.40.19:8080/',
   },
   module: {
     rules: [

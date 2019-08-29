@@ -4,6 +4,8 @@ import { cleanUp } from './functions';
 
 const Print = {
   send: (params, printFrame, printFrameDOM) => {
+    // printFrame图片展示iframe
+    // printFrameDOM  PDF展示iframe
     // 将iframe元素附加到文档正文
     if (params.type === 'pdf') {
       const printBtnGroupStyle =
@@ -240,7 +242,6 @@ function printIframeContent(iframeElement, params) {
         // 如果正在打印图像，请等待它们加载到iframe中
         const images = printDocument.getElementsByTagName('img');
         if (images.length > 0) {
-          console.log('images', images);
           loadIframeImages(images).then(() =>
             performPrint(iframeElement, params),
           );
