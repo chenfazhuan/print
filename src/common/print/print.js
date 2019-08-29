@@ -37,11 +37,15 @@ const Print = {
     } else if (params.type === 'cloud') {
       previewAddDOM();
       // 可以展示pdf文件的展示PDF
-      if (Browser.isChrome() || Browser.isFirefox() || Browser.isSafari()) {
+      if (Browser.isEdge() || Browser.isIE()) {
+        document.getElementById('iframeDiv').appendChild(printFrame);
         // document.getElementById('iframeDiv').appendChild(printFrameDOM);
-        document.getElementById('iframeDiv').appendChild(printFrame);
-      } else {
-        document.getElementById('iframeDiv').appendChild(printFrame);
+      } else if (
+        Browser.isChrome() ||
+        Browser.isFirefox() ||
+        Browser.isSafari()
+      ) {
+        document.getElementById('iframeDiv').appendChild(printFrameDOM);
       }
     } else {
       previewAddDOM();
